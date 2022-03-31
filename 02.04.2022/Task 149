@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    long int n;
+    ifstream inputFile("INPUT.txt");
+    if (!inputFile) {
+        cout << "Create file";
+        return -1;
+    }
+    inputFile >> n;
+    int* massiv = new int[n];
+    ofstream output("OUTPUT.txt");
+    for (int i = n - 1; i >= 0; i--)
+        inputFile >> massiv[i];
+    for (int i = 0; i < n; i++)
+    {
+        output << massiv[i] << " ";
+    }
+}
