@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    long int n;
+    ifstream inputFile("INPUT.txt");
+    if (!inputFile) {
+        cout << "Create file";
+        return -1;
+    }
+    inputFile >> n;
+    ofstream output("OUTPUT.txt");
+    if (n > 12)
+        output << "Error";
+    else if (n == 12 || n == 1 || n == 2)
+        output << "Winter";
+    else if (n == 3 || n == 4 || n == 5)
+        output << "Spring";
+    else if (n == 6 || n == 7 || n == 8)
+        output << "Summer";
+    else
+        output << "Autumn";
+}
