@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    int massiv[6];
+    int counter = 0;
+    int temp, temp1;
+    ifstream inputFile("INPUT.txt");
+    if (!inputFile) {
+        cout << "Create file";
+        return -1;
+    }
+    for (int i = 0; i < 6; i++) {
+        inputFile >> massiv[i];
+    }
+    for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 2; i++) {
+            if (massiv[i] > massiv[i + 1]){
+                temp = massiv[i];
+                massiv[i] = massiv[i + 1];
+                massiv[i + 1] = temp;
+            }
+            if (massiv[i+3] > massiv[i + 4]){
+                temp1 = massiv[i + 3];
+                massiv[i + 3] = massiv[i + 4];
+                massiv[i + 4] = temp1;
+            }
+        }
+    }
+    ofstream output("OUTPUT.txt");
+    output << massiv[0] * massiv[3] + massiv[1] * massiv[4] + massiv[2] * massiv[5];
+}
