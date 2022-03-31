@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    long int firstNumber, secondNumber, thirdNumber;
+    ifstream inputFile("INPUT.txt");
+    if (!inputFile) {
+        cout << "Create file";
+        return -1;
+    }
+    for (int i = 0; i < 3;i++)
+    {
+        if (i % 3 == 0)
+            inputFile >> firstNumber;
+        if (i % 3 == 1)
+            inputFile >> secondNumber;
+        if (i % 3 == 2)
+            inputFile >> thirdNumber;
+    }
+    ofstream output("OUTPUT.txt");
+    if (firstNumber >= secondNumber + thirdNumber)
+        output << "YES";
+    else
+        output << "NO";
+}
