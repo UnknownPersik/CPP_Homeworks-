@@ -11,17 +11,17 @@ string temp = "";
 string postfix = "";
 string infix;
 stack <char> stock;
-stack <int> newStack;
+stack <float> newStack;
 
 int priority(char symbol)
 {
-    switch (symbol){
-        case '+': return 0;
-        case '-': return 0;
-        case '/': return 1;
-        case '*': return 1;
-        case '^': return 2;
-        default: return -1;
+    switch (symbol) {
+    case '+': return 0;
+    case '-': return 0;
+    case '/': return 1;
+    case '*': return 1;
+    case '^': return 2;
+    default: return -1;
     }
 }
 
@@ -85,27 +85,27 @@ int main()
                 temp += postfix[i];
                 i++;
             }
-            int number = stoi(temp);
+            float number = stoi(temp);
             newStack.push(number);
         }
         else {
-            int secondNumber = newStack.top();
+            float secondNumber = newStack.top();
             newStack.pop();
-            int firstNumber = newStack.top();
+            float firstNumber = newStack.top();
             newStack.pop();
-            //cout << firstNumber << " " << secondNumber << endl;
-            if (postfix[i] == '+') 
+            if (postfix[i] == '+')
                 newStack.push(firstNumber + secondNumber);
-            else if (postfix[i] == '-') 
+            else if (postfix[i] == '-')
                 newStack.push(firstNumber - secondNumber);
-            else if (postfix[i] == '*') 
+            else if (postfix[i] == '*')
                 newStack.push(firstNumber * secondNumber);
-            else if (postfix[i] == '/') 
+            else if (postfix[i] == '/')
                 newStack.push(firstNumber / secondNumber);
             else if (postfix[i] == '^')
-                newStack.push(firstNumber ^ secondNumber);
+                newStack.push(pow(firstNumber, secondNumber));
         }
     }
     cout << newStack.top();
+    outputString << newStack.top();
     return 0;
 }
