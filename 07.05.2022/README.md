@@ -14,7 +14,5 @@ https://acmp.ru/index.asp?main=task&id_task=352
 https://acmp.ru/index.asp?main=task&id_task=422
 # 601.cpp
 https://acmp.ru/index.asp?main=task&id_task=601
-# 906.cpp
-https://acmp.ru/index.asp?main=task&id_task=906
 # 913.cpp
 https://acmp.ru/index.asp?main=task&id_task=913
