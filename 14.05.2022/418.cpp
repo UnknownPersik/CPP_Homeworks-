@@ -1,4 +1,4 @@
-#include <fstream>
+#include <iostream>
 #include <string>
 #include <list>
 
@@ -32,15 +32,13 @@ void addLine(list<size_t>& str, list<size_t>::iterator& curLine) {
 }
 
 int main() {
-    ifstream in("input.txt");
-    ofstream out("output.txt");
     list<size_t> str(1);
     list<size_t>::iterator curLine = str.begin();
     size_t max = 0;
 
-    while (in) {
+    while (cin) {
         char c;
-        in.get(c);
+        cin.get(c);
         if (c < 32)
             break;
         switch (c) {
@@ -64,6 +62,5 @@ int main() {
             break;
         }
     }
-
-    out << max;
+    cout << max;
 }
