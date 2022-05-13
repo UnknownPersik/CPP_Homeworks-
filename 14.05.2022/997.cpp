@@ -35,10 +35,10 @@ int main() {
     cin >> n >> m;
     map<string, int> dict;
     for (int i = 0; i < n; ++i) {
-        dict.insert(make_pair(inputString(in), 0));
+        dict.insert(make_pair(inputString(cin), 0));
     }
     while (true) {
-        string word = inputString(in);
+        string word = inputString(cin);
         if (word.empty())
             break;
         auto it = dict.find(word);
